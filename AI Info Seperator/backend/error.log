@@ -1,0 +1,4 @@
+{
+  "message": "Assignment to constant variable.",
+  "fullInfo": "TypeError: Assignment to constant variable."
+}

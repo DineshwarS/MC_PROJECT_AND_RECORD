@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-03-17T08:15:00.325Z",
+  "filesUploaded": [
+    "Dinesh aadhar 1.jpg",
+    "Dinesh Aadhar.jpg",
+    "Dinesh PAN.jpeg",
+    "kushmi aadhar.jpeg",
+    "Kushmi aadhar1.jpeg",
+    "Screenshot 2026-03-17 124540.png",
+    "Screenshot 2026-03-17 124559.png",
+    "WhatsApp Image 2025-02-13 at 17.21.45_b9345389.jpg",
+    "WhatsApp Image 2026-02-10 at 8.43.38 PM (1).jpeg",
+    "WhatsApp Image 2026-02-10 at 8.47.53 PM.jpeg"
+  ],
+  "prompt": "\nI have uploaded a batch of documents belonging to one or more people.\nThe following files are uploaded:\n1. Dinesh aadhar 1.jpg\n2. Dinesh Aadhar.jpg\n3. Dinesh PAN.jpeg\n4. kushmi aadhar.jpeg\n5. Kushmi aadhar1.jpeg\n6. Screenshot 2026-03-17 124540.png\n7. Screenshot 2026-03-17 124559.png\n8. WhatsApp Image 2025-02-13 at 17.21.45_b9345389.jpg\n9. WhatsApp Image 2026-02-10 at 8.43.38 PM (1).jpeg\n10. WhatsApp Image 2026-02-10 at 8.47.53 PM.jpeg\n\n\nYour task is to analyze these documents, identify the document type for each, extract key information, and group all documents belonging to the same person together.\n\nThe documents include ID cards (PAN, Aadhar), birth certificates, resumes, etc.\nIMPORTANT: Some documents are in Tamil. Read and extract information from Tamil documents accurately.\n\nStructure your extraction as follows:\n- For Aadhar: Name, Aadhar Number, DOB, Gender, Address.\n- For Resume: Name, Skills, Education, Projects, Experience.\n- For PAN: Name, Father's Name, DOB, PAN Number.\n\nIMPORTANT: \n1. If there are multiple images for the SAME document (e.g., front and back of Aadhar), MERGE the information into ONE document entry for that person.\n2. In the \"filenames\" array, you MUST use the EXACT, original filenames from the list provided above.\n\nReturn ONLY a JSON array with this exact structure:\n[\n  {\n    \"personName\": \"Full Name of the Person\",\n    \"documents\": [\n      {\n        \"type\": \"PAN / Aadhar / Birth Certificate / Resume / etc.\",\n        \"filenames\": [\"EXACT_FILENAME_1\", \"EXACT_FILENAME_2\"],\n        \"extractedInfo\": {\n           \"DOB\": \"...\",\n           \"IDNumber\": \"...\",\n           \"OtherRelevantFields\": { ... }\n        }\n      }\n    ]\n  }\n]\n\nCRITICAL: Do not invent filenames like \"image1.jpg\". Use the real filenames from the list: Dinesh aadhar 1.jpg, Dinesh Aadhar.jpg, Dinesh PAN.jpeg, kushmi aadhar.jpeg, Kushmi aadhar1.jpeg, Screenshot 2026-03-17 124540.png, Screenshot 2026-03-17 124559.png, WhatsApp Image 2025-02-13 at 17.21.45_b9345389.jpg, WhatsApp Image 2026-02-10 at 8.43.38 PM (1).jpeg, WhatsApp Image 2026-02-10 at 8.47.53 PM.jpeg.\n\nDo not include markdown wrappers like ```json. Return strictly the raw JSON array.\n        "
+}
